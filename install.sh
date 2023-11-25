@@ -1,19 +1,5 @@
 #!/bin/sh
 
-ifonts() {
-    echo "==========================================================="
-    echo "                   installing fonts                        "
-    echo "-----------------------------------------------------------"
-    wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Regular.ttf
-    wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold.ttf
-    wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Italic.ttf
-    wget https://github.com/romkatv/powerlevel10k-media/raw/master/MesloLGS%20NF%20Bold%20Italic.ttf
-    mkdir /.local/share/fonts
-    cp *.ttf /.local/share/fonts
-    fc-cache -f -v
-    rm *.tff
-}
-
 zshrc() {
     echo "==========================================================="
     echo "             cloning zsh-autosuggestions                   "
@@ -40,7 +26,6 @@ zshrc() {
 # change time zone
 sudo ln -fs /usr/share/zoneinfo/America/Chicago /etc/localtime
 
-ifonts
 zshrc
 
 # make directly highlighting readable - needs to be after zshrc line
